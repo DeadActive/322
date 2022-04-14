@@ -68,16 +68,6 @@
                 const title = document.querySelector(".title");
                 const img = document.querySelector(".img");
                 const button = document.querySelector('.release')
-
-                img.addEventListener("click", () => {
-                    if (!status) {
-                        updateState(setStatus(true));
-                    }
-                });
-
-                button.addEventListener('click', () => {
-                    updateState(setStatus(false))
-                })
                 
                 const state = await st
 
@@ -95,6 +85,17 @@
             document.addEventListener("DOMContentLoaded", async () => {
                 const img = document.querySelector(".img");
                 const button = document.querySelector('.release')
+
+                img.addEventListener("click", () => {
+                    if (!status) {
+                        updateState(setStatus(true));
+                    }
+                });
+
+                button.addEventListener('click', () => {
+                    updateState(setStatus(false))
+                })
+                
 
                 setInterval(() => {
                     updateState(getStatus())
